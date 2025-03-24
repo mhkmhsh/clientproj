@@ -1,12 +1,35 @@
-body {
-    background-color: #acacac;
+/* Reset styles */
+* {
     margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body & Layout */
+body {
+    background-color: #acacac;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #1B1B1B;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 10000; 
+}
+
+/* LOADER */
 .loader-container {
     position: fixed;
     top: 0;
@@ -29,50 +52,85 @@ body {
     animation: spin 1s linear 2;
 }
 
-
 @keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-
+/* Fade-out effect */
 .fade-out {
     animation: fadeOut 0.5s ease-out forwards;
 }
 
 @keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
+    from { opacity: 1; }
+    to { opacity: 0; visibility: hidden; }
 }
 
-
+/* Main content (Hidden Initially) */
 .content {
+    width: 100%;
+    height: 100vh;
+    padding-top: 60px; /* Prevent content from hiding behind navbar */
+    display: flex;
+    flex-direction: column;
     opacity: 0;
-    transform: translateY(-20px); 
+    transform: translateY(-20px);
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
-
 
 .content.show {
     opacity: 1;
     transform: translateY(0);
 }
 
-#headcarousel{
-    background-color:#1B1B1B ;
+/* SECTION STYLING */
+#headcarousel {
+    background-color: #1B1B1B;
+    padding: 20px;
+    flex: 1;
 }
-#biobox{
-    background-color:#fada5e;
+
+#biobox {
+    background-color: #fada5e;
+    padding: 20px;
+    flex: 1;
 }
-#cardbot{
-    background-color:#1b1b1b ;
+
+#cardbot {
+    background-color: #1b1b1b;
+    padding: 20px;
+    color: white;
+    flex: 1;
+}
+
+/* CAROUSEL */
+.carousel-container {
+    width: 100%; 
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+    border-radius: 10px;
+}
+
+.carousel-track {
+    display: flex;
+    width: auto;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 5px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .carousel-container {
+        max-width: 100%;
+    }
 }
