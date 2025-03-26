@@ -1,8 +1,13 @@
 body {
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
-    transition: margin-right 0.4s;
-  }
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
   
   .sidebar {
     width: 250px;
@@ -15,23 +20,21 @@ body {
     transition: left 0.4s;
     font-size: xx-large;
     font-family: "Great Vibes", cursive;
-  }
-  
-  .sidebar.active {
+}
+.sidebar.active {
     left: 0;
-  }
+}
   
-  .nav-link {
+.nav-link {
     color: #1b1b1b;
     padding: 10px 20px;
     display: block;
     text-decoration: none;
-  }
-  
-  .nav-link:hover {
+}
+.nav-link:hover {
     background: #1b1b1bc2;
-    color:rgba(255, 255, 255, 0.753);
-  }
+    color: rgba(255, 255, 255, 0.753);
+}
   
   /* New Plus Button Styling */
   .plusButton {
@@ -81,64 +84,48 @@ body {
     fill: #ffffff;
     transform: rotate(180deg);
   }
-  
-  
-  .button {
+  button {
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    width: 45px;
+    height: 45px;
+    opacity: 0.75;
+    border: 1px solid #e7eae8;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: bounce_513 1s infinite;
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: #1b1b1b;
-    border: none;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0px 0px 0px 4px rgba(0, 0, 0, 0.253);
+}
+button {
+    font-size: 20px;
+    background-color: white;
+    color: black;
+    width: 45px;
+    height: 45px;
+    opacity: 0.75;
+    border: 1px solid #e7eae8;
+    border-radius: 8px;
     cursor: pointer;
-    transition-duration: 0.3s;
-    overflow: hidden;
-    z-index: 1000; /* Ensures it's above other elements */
-  }
-  
-  .svgIcon {
-    width: 12px;
-    transition-duration: 0.3s;
-  }
-  
-  .svgIcon path {
-    fill: white;
-  }
-  
-  .button:hover {
-    width: 140px;
-    border-radius: 50px;
-    transition-duration: 0.3s;
-    background-color: #acacac;
-    align-items: center;
-  }
-  
-  .button:hover .svgIcon {
-    transition-duration: 0.3s;
-    transform: translateY(-200%);
-  }
-  
-  .button::before {
-    position: absolute;
-    bottom: -20px;
-    content: "Back to Top";
-    color: white;
-    font-size: 0px;
-  }
-  
-  .button:hover::before {
-    font-size: 13px;
-    opacity: 1;
-    transition-duration: 0.3s;
-  }
-  .header {
+    animation: bounce_513 1s infinite;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+@keyframes bounce_513 {
+    0%, 100% {
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,16 +138,17 @@ body {
     transform: translateX(-50%);
     width: 50%;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.267);
-    z-index: 999; 
+    z-index: 999;
+    padding: 15px 30px;
 }
 .header img {
-    height:25%;
-    width:25%;
+    height: 10rem;
+    margin: 0 15px;
 }
 .header h1 {
     font-size: 24px;
     margin: 0;
-    color:#ffffffd5;
+    color: #ffffffd5;
     font-family: "Great Vibes", cursive;
 }
 
@@ -168,3 +156,88 @@ body {
     height:32rem;
     opacity: 0.4;
 }
+
+.wrapper {
+    display: inline-flex;
+    list-style: none;
+    height: 120px;
+    width: 100%;
+    
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin: 10px;
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  

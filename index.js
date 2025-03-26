@@ -5,3 +5,6 @@ document.getElementById("menu-btn").addEventListener("click", function() {
     button.classList.toggle("active");
 });
 
+document.getElementById("backToTop").addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
