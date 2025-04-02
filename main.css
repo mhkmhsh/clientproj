@@ -1,0 +1,110 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    background-image: radial-gradient(#e3dfdf70 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+    text-align: center;
+    margin: 0;
+}
+
+.navigation-card {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: #d4d4d496;
+    padding: 15px 20px;
+    border-radius: 50px;
+    position: sticky;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 9999; 
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background-color: #fadb5e;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.tab:hover {
+    background-color: #e3dfdf70;
+}
+
+.aboutme {
+    background-color: #fadb5ea4;
+    border-radius: 50px 5px 50px 5px;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.card {
+    width: 100%;
+    max-width: 50%; /* Adjust this value as needed */
+    height: auto;
+    aspect-ratio: 1.5; /* Keeps the image ratio consistent */
+    border-radius: 30px;
+    background-image: url("kumbPottery/kp14.jpg");
+    background-size: cover;
+    background-position: center;
+    box-shadow: 15px 15px 30px #aa9647,
+                -15px -15px 30px #00000023;
+    margin-bottom: 20px;
+}
+
+.aboutmetext {
+    color: black;
+    width: 100%;
+    max-width: 50%; /* Adjust for responsiveness */
+    height: auto;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 15px 15px 30px #aa9647,
+                -15px -15px 30px #00000023;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .aboutme {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .card {
+        width: 45%; /* Two cards side by side on larger screens */
+    }
+
+    .aboutmetext {
+        width: 45%; /* Align text beside the card on larger screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .aboutme {
+        padding: 20px;
+    }
+
+    .card,
+    .aboutmetext {
+        width: 100%; /* Stack card and text on smaller screens */
+    }
+}
+
