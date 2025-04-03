@@ -9,6 +9,7 @@ body {
   background-position: -5px -5px;
   text-align: center;
   margin: 0;
+  overflow: hidden;
 }
 
 .navigation-card {
@@ -72,4 +73,28 @@ body {
   object-fit: cover;
   width: 100%;
   height: 100vh;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+#gallery-container {
+  width: 100%;
+  height: 400px;
+  overflow-y: auto;
+  border: 2px solid #ffe19061;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.image-box {
+  width: 30%;
+  margin: 1%;
+}
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
