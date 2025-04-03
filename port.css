@@ -1,179 +1,75 @@
-/* General body styling */
 body {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    background-color: #f5f5f5;
-  }
-  
-  /* Sidebar styling */
-  .sidebar {
-    width: 250px;
-    height: 100vh;
-    position: fixed;
-    left: -250px;
-    /* Initially hidden off-screen */
-    top: 0;
-    background: #acacac96;
-    padding-top: 20px;
-    transition: left 0.4s ease-in-out;
-    /* Smooth transition for opening/closing */
-    font-size: xx-large;
-    font-family: "Great Vibes", cursive;
-    overflow: hidden;
-    /* Prevents content overflow */
-    z-index:1 ;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.267);
-  }
-  
-  /* Sidebar active state (when opened) */
-  .sidebar.active {
-    left: 0;
-  }
-  
-  /* Sidebar navigation link styling */
-  .nav-link {
-    color: #1b1b1b;
-    padding: 10px 20px;
-    display: block;
-    text-decoration: none;
-    width: 100%;
-    /* Ensures background stays inside sidebar */
-    box-sizing: border-box;
-    /* Prevents padding from increasing width */
-  }
-  
-  /* Sidebar navigation link hover effect */
-  .nav-link:hover {
-    background: #1b1b1bc2;
-    color: rgba(255, 255, 255, 0.753);
-  }
-  
-  /* Plus button styling (for sidebar toggle) */
-  .plusButton {
-    --plus_sideLength: 2.5rem;
-    --plus_topRightTriangleSideLength: 0.9rem;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ffffff;
-    width: var(--plus_sideLength);
-    height: var(--plus_sideLength);
-    background-color: #1b1b1bad;
-    overflow: hidden;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-  }
-  
-  /* Triangle effect inside the plus button */
-  .plusButton::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 0;
-    border-width: 0 var(--plus_topRightTriangleSideLength) var(--plus_topRightTriangleSideLength) 0;
-    border-style: solid;
-    border-color: transparent #acacac transparent transparent;
-    transition: 0.2s ease-in-out;
-  }
-  
-  /* When plus button is active, triangle expands */
-  .plusButton.active::before {
-    --plus_topRightTriangleSideLength: calc(var(--plus_sideLength) * 2);
-  }
-  
-  /* Plus icon inside button */
-  .plusIcon {
-    fill: #ffffff;
-    width: calc(var(--plus_sideLength) * 0.7);
-    height: calc(var(--plus_sideLength) * 0.7);
-    z-index: 1;
-    transition: 0.2s ease-in-out;
-  }
-  
-  /* Plus icon rotates when active */
-  .plusButton.active .plusIcon {
-    fill: #ffffff;
-    transform: rotate(180deg);
-  }
-  
-  /* Floating button styling */
-  button {
-    font-size: 20px;
-    background-color: white;
-    color: black;
-    width: 45px;
-    height: 45px;
-    opacity: 0.75;
-    border: 1px solid #e7eae8;
-    border-radius: 8px;
-    cursor: pointer;
-    animation: bounce_513 1s infinite;
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-  }
-  
-  /* Bouncing animation for the button */
-  @keyframes bounce_513 {
-  
-    0%,
-    100% {
-      transform: translateY(-25%);
-      animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
-    }
-  
-    50% {
-      transform: translateY(0);
-      animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    }
-  }
-  
-  /* Header styling */
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #1b1b1b;
-    color: white;
-    border-radius: 30px;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 50%;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.267);
-    z-index: 999;
-    padding: 15px 30px;
-  }
-  
-  /* Header logo image */
-  .header img {
-    height: 10rem;
-    margin: 0 15px;
-  }
-  
-  /* Header title */
-  .header h1 {
-    font-size: 24px;
-    margin: 0;
-    color: #ffffffd5;
-    font-family: "Great Vibes", cursive;
-  }
-  
-  /* Transparent background logo */
-  .nlogo {
-    height: 32rem;
-    opacity: 0.4;
-  }
-  
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  background-image: radial-gradient(#e3dfdf70 2px, transparent 0);
+  background-size: 30px 30px;
+  background-position: -5px -5px;
+  text-align: center;
+  margin: 0;
+}
+
+.navigation-card {
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: #d4d4d496;
+  padding: 15px 20px;
+  border-radius: 50px;
+  position: sticky;
+  top: 0;
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 9999; 
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  background-color: #fadb5e;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  background-color: #e3dfdf70;
+}
+
+#backgroundCarousel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Keep behind content */
+  filter: grayscale(100%);
+ opacity:0.8;
+}
+
+.carousel-inner {
+  width: 100%;
+  height: 100vh;
+}
+
+.carousel-item {
+  width: 100%;
+  height: 100vh;
+}
+
+.carousel-item img {
+  object-fit: cover;
+  width: 100%;
+  height: 100vh;
+}

@@ -1,0 +1,75 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #ffffff;
+    background-image: radial-gradient(#e3dfdf70 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+    text-align: center;
+    margin: 0;
+}
+
+.navigation-card {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: #d4d4d496;
+    padding: 15px 20px;
+    border-radius: 50px;
+    position: sticky;
+    top: 0;
+    left: 50%; 
+    transform: translateX(-50%); 
+    z-index: 9999; 
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    background-color: #fadb5e;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.tab:hover {
+    background-color: #e3dfdf70;
+}
+
+#backgroundCarousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Keep behind content */
+    filter: grayscale(100%);
+   opacity:0.8;
+  }
+  
+  .carousel-inner {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .carousel-item {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100vh;
+  }

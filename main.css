@@ -47,64 +47,29 @@ body {
     background-color: #e3dfdf70;
 }
 
-.aboutme {
-    background-color: #fadb5ea4;
-    border-radius: 50px 5px 50px 5px;
+#backgroundCarousel {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Keep behind content */
+    filter: grayscale(100%);
+   opacity:0.8;
+  }
+  
+  .carousel-inner {
     width: 100%;
-    padding: 20px 0;
-}
-
-.card {
+    height: 100vh;
+  }
+  
+  .carousel-item {
     width: 100%;
-    max-width: 50%; /* Adjust this value as needed */
-    height: auto;
-    aspect-ratio: 1.5; /* Keeps the image ratio consistent */
-    border-radius: 30px;
-    background-image: url("kumbPottery/kp14.jpg");
-    background-size: cover;
-    background-position: center;
-    box-shadow: 15px 15px 30px #aa9647,
-                -15px -15px 30px #00000023;
-    margin-bottom: 20px;
-}
-
-.aboutmetext {
-    color: black;
+    height: 100vh;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
     width: 100%;
-    max-width: 50%; /* Adjust for responsiveness */
-    height: auto;
-    border-radius: 30px;
-    padding: 20px;
-    box-shadow: 15px 15px 30px #aa9647,
-                -15px -15px 30px #00000023;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .aboutme {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    .card {
-        width: 45%; /* Two cards side by side on larger screens */
-    }
-
-    .aboutmetext {
-        width: 45%; /* Align text beside the card on larger screens */
-    }
-}
-
-@media (max-width: 767px) {
-    .aboutme {
-        padding: 20px;
-    }
-
-    .card,
-    .aboutmetext {
-        width: 100%; /* Stack card and text on smaller screens */
-    }
-}
-
+    height: 100vh;
+  }
