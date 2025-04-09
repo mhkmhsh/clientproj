@@ -55,7 +55,7 @@ body {
   width: 100vw;
   height: 100vh;
   z-index: -1; /* Keep behind content */
-  filter: grayscale(100%);
+  filter: grayscale(10%);
  opacity:0.8;
 }
 
@@ -87,7 +87,7 @@ body {
   height: 90vh;              /* Container slightly smaller than full viewport */
   overflow-y: auto;          /* Enable vertical scroll */
   overflow-x: hidden;        /* Disable horizontal scroll */
-  background: #1e1e1e;
+  background: #fadb5e4f;
   border-radius: 12px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }

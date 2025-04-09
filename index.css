@@ -6,7 +6,7 @@
   width: 100vw;
   height: 100vh;
   z-index: -1; /* Keep behind content */
-  filter: grayscale(100%);
+  filter: grayscale(10%);
  opacity:0.8;
 }
 
