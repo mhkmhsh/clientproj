@@ -32,48 +32,40 @@
             </svg>
         </a>
         <a href="port.html" class="tab">
-            <img width="30" height="30" src="https://img.icons8.com/ios/50/apple-camera.png" alt="apple-camera"/>
+            <img width="30" height="30" src="https://img.icons8.com/ios/50/apple-camera.png" alt="apple-camera" />
         </a>
-    
+
         <a href="form.html" class="tab">
-            <img width="30" height="30" src="https://img.icons8.com/windows/96/test.png" alt="test"/>
+            <img width="30" height="30" src="https://img.icons8.com/windows/96/test.png" alt="test" />
         </a>
     </div>
     <!--nav bar -->
-    
-   
-<!--IMG BACKDROP -->
-<div id="backgroundCarousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <img src="kumbPottery/kp16.jpg" class="d-block w-100" alt="Image 1">
+
+
+    <!--IMG BACKDROP -->
+    <div id="backgroundCarousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="kumbPottery/kp16.jpg" class="d-block w-100" alt="Image 1">
+            </div>
         </div>
     </div>
-</div>
 
-   <!--Image Gallery-->
+    <!--Image Gallery-->
 
-   <div class="gallery-container" id="gallery">
-    <img src="goaCarnival/1.jpg" alt="Image 1">
-    <img src="goaCarnival/2.jpg" alt="Image 2">
-    <img src="goaCarnival/3.jpg" alt="Image 3">
-    <img src="goaCarnival/4.jpg" alt="Image 4">
-    <img src="goaCarnival/5.jpg" alt="Image 5">
-    <img src="goaCarnival/6.jpg" alt="Image 6">
-    <img src="goaCarnival/7.jpg" alt="Image 7">
-    <img src="goaCarnival/8.jpg" alt="Image 8">
-  </div>
-  
+    <div class="controls">
+        <select id="folderSelect">
+          <option value="goaCarnival">Goa Carnival</option>
+          <option value="kumbPottery">Kumb Pottery</option>
+          <option value="londonTravel">London Travel</option>
+          <option value="prayagraj">Prayagraj</option>
+          <option value="sangenerBangru">Sangener Bangru</option>
+        </select>
+      </div>
+      <div id="gallery" class="gallery"></div>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!--CAROUSEL SECTION-->
+     <!--CAROUSEL SECTION-->
     <!--ABOUT ME-->
 
 
@@ -83,7 +75,9 @@
         crossorigin="anonymous"></script>
 
     <!-- Custom JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="port.js"></script>
+    
 </body>
 
 </html>
