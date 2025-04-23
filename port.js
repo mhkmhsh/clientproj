@@ -6,34 +6,44 @@ const imageData = {
   sangenerBangru: ["sb1.jpg", "sb2.jpg", "sb3.jpg", "sb4.jpg", "sb5.jpg", "sb6.jpg", "sb7.jpg", "sb8.jpg", "sb9.jpg", "sb10.jpg"]
 };
 
-// Shuffle function
-function shuffleArray(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
+const galleryDescriptions = {
+  goaCarnival: "Vibrant celebrations and colorful streets during Goa's famous carnival.",
+  kumbPottery: "A journey through the craft and soul of India's traditional pottery.",
+  londonTravel: "Urban charm and hidden stories from the heart of London.",
+  prayagraj: "Sacred rituals and riverside serenity captured in Prayagraj.",
+  sangenerBangru: "Art, fabric, and tradition woven into the soul of Rajasthan."
+};
 
-// Load images dynamically
 function loadImages(folder) {
   const $gallery = $('#gallery');
   $gallery.empty();
 
-  const images = shuffleArray([...imageData[folder]]);
-  images.forEach(image => {
+  // Add text card first
+  const textCard = $(`<div class="gallery-text-card"><p>${galleryDescriptions[folder]}</p></div>`);
+  $gallery.append(textCard);
+
+  // Add images in original order
+  imageData[folder].forEach(image => {
     const imgPath = `${folder}/${image}`;
-    $gallery.append(`<img src="${imgPath}" alt="${image}" class="img-fluid">`);
+    $gallery.append(`<img src="${imgPath}" alt="${image}" class="img-fluid gallery-image">`);
   });
+
+  // Apply custom CSS for Prayagraj gallery
+  if (folder === 'prayagraj') {
+    $gallery.addClass('prayagraj');
+  }
 }
 
-// Initial load
 $(document).ready(function () {
   const initialFolder = $('#folderSelect').val();
   loadImages(initialFolder);
 
   $('#folderSelect').on('change', function () {
     const selected = $(this).val();
-    loadImages(selected);
+    if (imageData[selected]) {
+      loadImages(selected);
+    } else {
+      console.error("Folder not found!");
+    }
   });
 });
