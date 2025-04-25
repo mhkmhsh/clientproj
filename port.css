@@ -118,7 +118,7 @@ body {
   width: 100%;
   margin-bottom: 20px;
   break-inside: avoid;
-  border-radius: 10px;
+ 
 }
 
 .gallery-wrapper {
@@ -132,18 +132,17 @@ body {
 
 
 .gallery img:hover {
-  box-shadow: 0 0 15px 4px rgba(255, 223, 0, 0.6);
+  box-shadow: 0 0 15px 4px rgba(255, 230, 0, 0.6);
   transform: none;
 }
 
 
 .galcont {
-  width: 90%;
-  max-width: 1200px;
+  width: 100%;
   height: 80vh;
   overflow-y: auto;
   margin: 0 auto;
-  background: #fadb5e88;
+  background: #fadb5e21;
   padding: 20px;
   border-radius: 2px 2px 2px 2px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -166,7 +165,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.222);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-radius: 0.7rem;
+ 
   transition: all ease 0.3s;
   color: #000;
   font-size: 1.5rem;
@@ -185,3 +184,19 @@ body {
 }
 
 
+::-webkit-scrollbar {
+  width: 12px; 
+}
+
+::-webkit-scrollbar-track {
+  background: #d38900; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffebd4; 
+    
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1b0a00;
+}
