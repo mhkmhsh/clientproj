@@ -12,22 +12,22 @@ body {
 }
 
 .navigation-card {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    background-color: #d4d4d4ab;
-    padding: 15px 20px;
- 
-    position: sticky;
-    top: 0;
-    left: 50%; 
-    transform: translateX(-50%); 
-    z-index: 9999; 
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: #ffc50625;
+  border:2px solid #fadb5e;
+  border-radius: 50px 50px 50px 50px;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 9999; 
 }
-
 .tab {
     display: flex;
     align-items: center;
@@ -75,13 +75,13 @@ body {
   }
 
   #aboutme {
-    background-color: #1b1b1b86;
+    background-color: #ffc50625;
 
-    color: #fff;
+    color: #ffffff;
     padding: 2rem;
     margin-top: 2rem;
     font-family: "Roboto Condensed", sans-serif;
-    border:3px solid #000000be;
+    border:3px solid #fadb5e;
   }
 
   h2{
@@ -89,7 +89,7 @@ body {
   }
   
   #aboutmeimg {
-    border-radius: 30px 150px;
+    border-radius: 50%;
     border: 5px solid #fadb5e;
     max-width: 500px;
     width: 80%;

@@ -12,20 +12,21 @@ body {
 }
 
 .navigation-card {
-    width: fit-content;
-    height: fit-content;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    background-color: #d4d4d496;
-    padding: 15px 20px;
-    border-radius: 50px;
-    position: sticky;
-    top: 0;
-    left: 50%; 
-    transform: translateX(-50%); 
-    z-index: 9999; 
+  width: fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  background-color: #ffc50625;
+  border:2px solid #fadb5e;
+  border-radius: 50px 50px 50px 50px;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  left: 50%; 
+  transform: translateX(-50%); 
+  z-index: 9999; 
 }
 
 .tab {
