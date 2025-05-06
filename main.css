@@ -11,23 +11,7 @@ body {
     margin: 0;
 }
 
-.navigation-card {
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  background-color: #ffc50625;
-  border:2px solid #fadb5e;
-  border-radius: 50px 50px 50px 50px;
-  padding: 15px 20px;
-  position: sticky;
-  top: 0;
-  left: 50%; 
-  transform: translateX(-50%); 
-  z-index: 9999; 
-}
+
 .tab {
     display: flex;
     align-items: center;
@@ -41,6 +25,51 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: all 0.3s;
+}
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.767);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  color:#fadb5e;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color:#fadb5e;
+  font-weight: 500;
+  font-family: "Roboto Condensed", sans-serif;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #fadb5e;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 }
 
 .tab:hover {
@@ -101,7 +130,7 @@ body {
 
 .hero {
   position: relative;
-  height: 100vh;
+  height: 98vh;
   width:100%;
   background: url('kumbPottery/kp11.jpg') no-repeat center center/cover;
   display: flex;
