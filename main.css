@@ -19,7 +19,7 @@ body {
     width: 50px;
     height: 50px;
     overflow: hidden;
-    background-color: #fadb5e;
+    background-color: #825123;
     padding: 15px;
     border-radius: 50%;
     cursor: pointer;
@@ -27,15 +27,17 @@ body {
     transition: all 0.3s;
 }
 .navbar {
-  position: sticky;
+  position: fixed; /* changed from sticky */
   top: 0;
+  left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.767);
+  background: #1b0c06b6; /* translucent overlay */
   backdrop-filter: blur(5px);
-  z-index: 1000;
-  color:#fadb5e;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 2000; /* ensure it's above carousel & hero */
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 
 .nav-container {
   display: flex;
@@ -56,14 +58,14 @@ body {
 
 .nav-links li a {
   text-decoration: none;
-  color:#fadb5e;
+  color:#ffffff;
   font-weight: 500;
   font-family: "Roboto Condensed", sans-serif;
   transition: color 0.3s;
 }
 
 .nav-links li a:hover {
-  color: #fadb5e;
+  color: #825123;
 }
 
 @media (max-width: 768px) {
@@ -103,15 +105,18 @@ body {
     height: 100vh;
   }
 
+
   #aboutme {
-    background-color: #ffc50625;
+    width: 100%;
+    background-color: #1b0c06a9;
     filter: grayscale(10%);
     color: #ffffff;
     padding: 2rem;
     margin-top: 2rem;
     font-family: "Roboto Condensed", sans-serif;
-    border:3px solid #fadb5e;
+    border:3px solid #1b0c06;
   }
+  
 
   h2{
     font-family: "Great Vibes", cursive;
@@ -119,9 +124,9 @@ body {
   
   #aboutmeimg {
     border-radius: 50%;
-    border: 5px solid #fadb5e;
+    border: 5px solid #1b0c06;
     max-width: 500px;
-    width: 80%;
+    width: 100%;
     height: auto;
 
   }
@@ -130,7 +135,7 @@ body {
 
 .hero {
   position: relative;
-  height: 98vh;
+  height: 100vh;
   width:100%;
   background: url('kumbPottery/kp11.jpg') no-repeat center center/cover;
   display: flex;
