@@ -4,9 +4,9 @@ body {
     align-items: center;
     justify-content: flex-start;
     background-color: #ffffff;
-    background-image: radial-gradient(#e3dfdf70 2px, transparent 0);
-    background-size: 30px 30px;
-    background-position: -5px -5px;
+  background-image: linear-gradient(#1b0c06,#2b1b10);
+  background-repeat: no-repeat;
+
     text-align: center;
     margin: 0;
 }
@@ -78,32 +78,7 @@ body {
     background-color: #ffffff;
 }
 
-#backgroundCarousel {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1; /* Keep behind content */
-    filter: grayscale(10%);
-   opacity:0.8;
-  }
-  
-  .carousel-inner {
-    width: 100%;
-    height: 100vh;
-  }
-  
-  .carousel-item {
-    width: 100%;
-    height: 100vh;
-  }
-  
-  .carousel-item img {
-    object-fit: cover;
-    width: 100%;
-    height: 100vh;
-  }
+
 
 
   #aboutme {
@@ -130,6 +105,7 @@ body {
     height: auto;
 
   }
+  
   
 
 
