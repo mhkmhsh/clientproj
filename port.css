@@ -11,23 +11,56 @@ body {
   margin: 0;
   overflow: hidden;
 }
-
-.navigation-card {
-  width: fit-content;
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  background-color: #ffc50625;
-  border:2px solid #fadb5e;
-  border-radius: 50px 50px 50px 50px;
-  padding: 15px 20px;
-  position: sticky;
+.navbar {
+  position: fixed; /* changed from sticky */
   top: 0;
-  left: 50%; 
-  transform: translateX(-50%); 
-  z-index: 9999; 
+  left: 0;
+  width: 100%;
+  background: #1b0c06b6; /* translucent overlay */
+  backdrop-filter: blur(5px);
+  z-index: 2000; /* ensure it's above carousel & hero */
+  color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color:#ffffff;
+  font-weight: 500;
+  font-family: "Roboto Condensed", sans-serif;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #825123;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+
+.tab:hover {
+    background-color: #ffffff;
 }
 
 .tab {
