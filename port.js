@@ -1,49 +1,52 @@
-const imageData = {
-  goaCarnival: ["1.jpg", "2.jpg", "3.jpg", "4.jpg", "5.jpg", "6.jpg", "7.jpg", "8.jpg"],
-  kumbPottery: ["kp1.jpg", "kp2.jpg", "kp3.jpg", "kp4.jpg", "kp5.jpg", "kp6.jpg", "kp7.jpg", "kp8.jpg", "kp9.jpg", "kp10.jpg", "kp11.jpg", "kp12.jpg", "kp13.jpg", "kp14.jpg", "kp15.jpg", "kp16.jpg", "kp17.jpg", "kp18.jpg", "kp19.jpg", "kp20.jpg"],
-  londonTravel: ["lt1.jpg", "lt2.jpg", "lt3.jpg", "lt4.jpg", "lt5.jpg", "lt6.jpg", "lt7.jpg", "lt8.jpg", "lt9.jpg", "lt10.jpg", "lt11.jpg"],
-  prayagraj: ["p1.jpg", "p2.jpg", "p3.jpg", "p4.jpg", "p5.jpg", "p6.jpg"],
-  sangenerBangru: ["sb1.jpg", "sb2.jpg", "sb3.jpg", "sb4.jpg", "sb5.jpg", "sb6.jpg", "sb7.jpg", "sb8.jpg", "sb9.jpg", "sb10.jpg"]
-};
+document.addEventListener("DOMContentLoaded", () => {
+  const gallery = document.querySelector(".gallary");
+  const title = document.querySelector("h1");
+  const select = document.getElementById("gallery-select");
 
-const galleryDescriptions = {
-  goaCarnival: "Vibrant celebrations and colorful streets during Goa's famous carnival.",
-  kumbPottery: "A journey through the craft and soul of India's traditional pottery.",
-  londonTravel: "Urban charm and hidden stories from the heart of London.",
-  prayagraj: "Sacred rituals and riverside serenity captured in Prayagraj.",
-  sangenerBangru: "Art, fabric, and tradition woven into the soul of Rajasthan."
-};
+  function loadGallery(folder, count) {
+    gallery.innerHTML = "";
+    title.textContent = folder; // update h1 with folder name
 
-function loadImages(folder) {
-  const $gallery = $('#gallery');
-  $gallery.empty();
+    for (let i = 1; i <= count; i++) {
+      const item = document.createElement("div");
+      item.classList.add("item");
 
-  // Add text card first
-  const textCard = $(`<div class="gallery-text-card"><p>${galleryDescriptions[folder]}</p></div>`);
-  $gallery.append(textCard);
+      const imageContainer = document.createElement("div");
+      imageContainer.classList.add("item-img");
 
-  // Add images in original order
-  imageData[folder].forEach(image => {
-    const imgPath = `${folder}/${image}`;
-    $gallery.append(`<img src="${imgPath}" alt="${image}" class="img-fluid gallery-image">`);
-  });
+      const img = document.createElement("img");
+      img.src = `${folder}/kp${i}.jpg`;
+      img.alt = `${folder} ${i}`;
 
-  // Apply custom CSS for Prayagraj gallery
-  if (folder === 'prayagraj') {
-    $gallery.addClass('prayagraj');
-  }
-}
+      imageContainer.appendChild(img);
+      item.appendChild(imageContainer);
+      gallery.appendChild(item);
 
-$(document).ready(function () {
-  const initialFolder = $('#folderSelect').val();
-  loadImages(initialFolder);
-
-  $('#folderSelect').on('change', function () {
-    const selected = $(this).val();
-    if (imageData[selected]) {
-      loadImages(selected);
-    } else {
-      console.error("Folder not found!");
+      // Add modal logic here if needed
+      img.addEventListener("click", () => {
+        document.querySelector(".img-modal").style.pointerEvents = "auto";
+        document.querySelector(".img-modal").style.clipPath =
+          "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
+        document.querySelector(".img-modal .img").innerHTML = `<img src="${img.src}" alt="${img.alt}" />`;
+        document.querySelector(".img-name p").textContent = img.alt;
+      });
     }
+  }
+
+  // Handle dropdown change
+  select.addEventListener("change", () => {
+    const [folder, count] = select.value.split("|");
+    loadGallery(folder, Number(count));
   });
+
+  // Close button logic
+  document.querySelector(".close-btn").addEventListener("click", () => {
+    document.querySelector(".img-modal").style.pointerEvents = "none";
+    document.querySelector(".img-modal").style.clipPath =
+      "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)";
+  });
+
+  // Load default gallery
+  const [defaultFolder, defaultCount] = select.value.split("|");
+  loadGallery(defaultFolder, Number(defaultCount));
 });

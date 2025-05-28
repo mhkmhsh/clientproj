@@ -60,20 +60,34 @@
     </div>
 
     <!--Image Gallery-->
-
-    <div class="custom-select-wrapper p-3">
-        <select id="folderSelect">
-          <option value="goaCarnival">Goa Carnival</option>
-          <option value="kumbPottery">Kumb Pottery</option>
-          <option value="londonTravel">London Travel</option>
-          <option value="prayagraj">Prayagraj</option>
-          <option value="sangenerBangru">Sangener Bangru</option>
-        </select>
+    <div class="custom-select-wrapper" data-scroll-section>
+      <label for="gallery-select" style="color:#333; font-weight:600; font-family:'Roboto Condensed', sans-serif; font-size: 1rem;">Choose Gallery:</label>
+      <select id="gallery-select">
+        <option value="goaCarnival|8">Goa Carnival (8)</option>
+        <option value="kumbPottery|20">Kumbh Pottery (20)</option>
+        <option value="londonTravel|11">London Travel (11)</option>
+        <option value="prayagraj|6">Prayagraj (6)</option>
+        <option value="sangenerBangru|10">Sangener Bangru (10)</option>
+      </select>
+    </div>
+    
+    <div class="container" data-scroll-container>
+      <h1 data-scroll-section class="gallery-title">Kumbh Pottery</h1>
+      <div class="gallary" data-scroll-section></div>
+  </div>
+  <div class="img-modal">
+      <div class="img"></div> 
+      <div class="modal-item img-name">
+        <p>img-name</p>
+        <div class="modal-item-revealer"></div>
       </div>
-      
-      <div class="galcont">
-      <div id="gallery" class="gallery"></div>
-</div>
+      <div class="modal-item close-btn">
+        <p>Close</p>
+        <div class="modal-item-revealer"></div>
+      </div>
+    </div>
+    
+  </div>
 
      <!--CAROUSEL SECTION-->
     <!--ABOUT ME-->
