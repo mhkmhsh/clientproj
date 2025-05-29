@@ -180,7 +180,7 @@ img {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #1b0c06;
+  background: #1b0c06b9;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -219,7 +219,7 @@ img {
 .modal-item p {
   position: relative;
   font-size: 14px;
-  color: #fff;
+  color: #1b0c06ba;
   top: 15px;
 
 }
@@ -240,7 +240,7 @@ img {
   background:#825123;
 }
 
-.close-btn{ß
+.close-btn{
   cursor:pointer;
 }
 
@@ -275,5 +275,36 @@ img {
 
   #gallery-select {
     font-size: 0.9rem;
+  }
+}
+.title-dropdown-wrapper {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  gap: 1rem;
+  margin-top: 3em;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
+}
+
+.custom-select-wrapper select {
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  font-family: "Roboto Condensed", sans-serif;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  min-width: 200px;
+}
+
+/* Optional: center dropdown in wrapper on smaller screens */
+@media (max-width: 768px) {
+  .title-dropdown-wrapper {
+    flex-direction: column;
+  }
+
+  .custom-select-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }

@@ -1,50 +1,51 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const gallery = document.querySelector(".gallary");
-  const title = document.querySelector("h1");
-  const select = document.getElementById("gallery-select");
+$(document).ready(function () {
+  const gallerySelect = $('#gallery-select');
+  const galleryContainer = $('.gallary');
+  const galleryTitle = $('.gallery-title');
+  const modal = $('.img-modal');
+  const modalImg = $('.img-modal .img');
+  const modalName = $('.img-name p');
 
   function loadGallery(folder, count) {
-    gallery.innerHTML = "";
-    title.textContent = folder.replace(/([A-Z])/g, ' $1').trim();
+    galleryContainer.empty();
 
     for (let i = 1; i <= count; i++) {
-      const item = document.createElement("div");
-      item.classList.add("item");
-
-      const imageContainer = document.createElement("div");
-      imageContainer.classList.add("item-img");
-
-      const img = document.createElement("img");
-      img.src = `${folder}/img${i}.jpg`;
-      img.alt = `Image ${i}`;
-
-      imageContainer.appendChild(img);
-      item.appendChild(imageContainer);
-      gallery.appendChild(item);
-
-      // Modal Logic
-      img.addEventListener("click", () => {
-        const modal = document.querySelector(".img-modal");
-        modal.style.pointerEvents = "auto";
-        modal.style.clipPath = "polygon(0 0, 100% 0, 100% 100%, 0% 100%)";
-        document.querySelector(".img-modal .img").innerHTML = `<img src="${img.src}" alt="${img.alt}" />`;
-        document.querySelector(".img-name p").textContent = img.alt;
-      });
+      const imgPath = `${folder}/img${i}.jpg`;
+      const item = $(`
+        <div class="item">
+          <div class="item-img">
+            <img src="${imgPath}" alt="Image ${i}" data-name="img${i}.jpg" />
+          </div>
+        </div>
+      `);
+      galleryContainer.append(item);
     }
+
+    galleryTitle.text(folder.replace(/([A-Z])/g, ' $1').trim());
   }
 
-  select.addEventListener("change", () => {
-    const [folder, count] = select.value.split("|");
-    loadGallery(folder, Number(count));
+  // Initial load
+  const initialValue = gallerySelect.val().split('|');
+  loadGallery(initialValue[0], parseInt(initialValue[1]));
+
+  // On dropdown change
+  gallerySelect.on('change', function () {
+    const [folder, count] = $(this).val().split('|');
+    loadGallery(folder, parseInt(count));
   });
 
-  document.querySelector(".close-btn").addEventListener("click", () => {
-    const modal = document.querySelector(".img-modal");
-    modal.style.pointerEvents = "none";
-    modal.style.clipPath = "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)";
+  // Modal logic
+  galleryContainer.on('click', 'img', function () {
+    const src = $(this).attr('src');
+    const name = $(this).data('name');
+    modalImg.html(`<img src="${src}" alt="${name}" />`);
+    modalName.text(name);
+    modal.css('clip-path', 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)');
+    modal.css('pointer-events', 'auto');
   });
 
-  // Load default on page load
-  const [defaultFolder, defaultCount] = select.value.split("|");
-  loadGallery(defaultFolder, Number(defaultCount));
+  $('.close-btn').on('click', function () {
+    modal.css('clip-path', 'polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)');
+    modal.css('pointer-events', 'none');
+  });
 });
