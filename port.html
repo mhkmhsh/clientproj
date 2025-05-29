@@ -2,92 +2,112 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sutapa Pal Photography</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sutapa Pal Photography</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <!-- Boxicons CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+  <!-- Boxicons CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
 
-    <!-- Custom CSS -->
-    <link href="port.css" rel="stylesheet" type="text/css">
- <!-- Custom CSS -->
- <link href="main.css" rel="stylesheet" type="text/css">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&family=Miss+Fajardose&family=Shrikhand&display=swap" rel="stylesheet">
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link href="port.css" rel="stylesheet" type="text/css">
+  <!-- Custom CSS -->
+  <link href="main.css" rel="stylesheet" type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Great+Vibes&family=Miss+Fajardose&family=Shrikhand&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
 </head>
 
 <body>
-   <!--nav bar -->
-    <header class="navbar">
-  <nav class="nav-container">
+  <!--nav bar -->
+  <header class="navbar">
+    <nav class="nav-container">
 
 
-    <!-- Navigation Links (collapsible on mobile) -->
-   
+      <!-- Navigation Links (collapsible on mobile) -->
+
       <ul class="nav-links">
         <li><a href="main.html">Home</a></li>
         <li><a href="#aboutme">About Me</a></li>
         <li><a href="port.html">Portfolio</a></li>
         <li><a href="form.html">Contact</a></li>
       </ul>
+      </div>
+
+    </nav>
+  </header>
+
+
+
+  <!--nav bar -->
+
+
+  <!--IMG BACKDROP -->
+  <div id="backgroundCarousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="kumbPottery/img16.jpg" class="d-block w-100" alt="Image 1">
+      </div>
     </div>
+  </div>
 
-  </nav>
-</header>
-
-      
-
-    <!--nav bar -->
-  
-
-    <!--IMG BACKDROP -->
-    <div id="backgroundCarousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="kumbPottery/kp16.jpg" class="d-block w-100" alt="Image 1">
-            </div>
-        </div>
-    </div>
-
-    <!--Image Gallery-->
-
-    <div class="custom-select-wrapper p-3">
-        <select id="folderSelect">
-          <option value="goaCarnival">Goa Carnival</option>
-          <option value="kumbPottery">Kumb Pottery</option>
-          <option value="londonTravel">London Travel</option>
-          <option value="prayagraj">Prayagraj</option>
-          <option value="sangenerBangru">Sangener Bangru</option>
+  <!--Image Gallery-->
+  <!-- Dropdown wrapper -->
+  <div class="container" data-scroll-container>
+    <div class="title-dropdown-wrapper" data-scroll-section>
+      <div class="custom-select-wrapper">
+        <select id="gallery-select">
+          <option value="goaCarnival|8">Goa Carnival</option>
+          <option value="kumbPottery|20">Kumb Pottery</option>
+          <option value="londonTravel|11">London Travel</option>
+          <option value="prayagraj|6">Prayagraj</option>
+          <option value="sangenerBangru|10">Sangener Bangru</option>
         </select>
       </div>
-      
-      <div class="galcont">
-      <div id="gallery" class="gallery"></div>
-</div>
+    </div>
+  
+    <!-- Only ONE gallery container -->
+    <div class="gallary" data-scroll-section></div>
+  </div>
+  
+  <!-- Image Modal -->
+  <div class="img-modal">
+    <div class="img"></div>
+    <div class="modal-item img-name">
+      <p>img-name</p>
+      <div class="modal-item-revealer"></div>
+    </div>
+    <div class="modal-item close-btn">
+      <p>Close</p>
+      <div class="modal-item-revealer"></div>
+    </div>
+  </div>
+  
 
-     <!--CAROUSEL SECTION-->
-    <!--ABOUT ME-->
+  <!--CAROUSEL SECTION-->
+  <!--ABOUT ME-->
 
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-kQtW33rZJAHj6wR5mPbKpJr4U6kE5N4I1m3R5g8Y5u7z4k5z5t5z5K5X5X5X5X5X"
-        crossorigin="anonymous"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kQtW33rZJAHj6wR5mPbKpJr4U6kE5N4I1m3R5g8Y5u7z4k5z5t5z5K5X5X5X5X5X"
+    crossorigin="anonymous"></script>
 
-    <!-- Custom JS -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="port.js"></script>
-    
+  <!-- Custom JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="port.js"></script>
+
 </body>
 
 </html>
