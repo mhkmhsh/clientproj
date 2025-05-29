@@ -180,7 +180,7 @@ img {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: #090909;
+  background: #1b0c06;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,10 +237,10 @@ img {
   top:15px;
   width:100%;
   height:100%;
-  background:#090909;
+  background:#825123;
 }
 
-.close-btn{
+.close-btn{ß
   cursor:pointer;
 }
 
@@ -253,7 +253,7 @@ img {
   color: #333;
   border: 1px solid #ccc;
   border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px #1b0c06b5;
   appearance: none;
 }
 
@@ -277,4 +277,3 @@ img {
     font-size: 0.9rem;
   }
 }
-
