@@ -174,3 +174,146 @@ img {
     width: calc(50% - 5px); 
   }
 }
+
+.img-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #090909;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2em;
+  pointer-events: none;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.img-modal .img {
+  width: auto;
+  height: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-modal .img img {
+  width: auto;
+  height: 100%;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+
+
+.model-item {
+  position: relative;
+  width: max-content;
+  height: max-content;
+}
+
+.modal-item p {
+  position: relative;
+  font-size: 14px;
+  color: #fff;
+  top: 15px;
+
+}
+
+.modal-item-revealer{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+}
+
+.modal-item-revealer:after{
+  content:"";
+  position:absolute;
+  top:15px;
+  width:100%;
+  height:100%;
+  background:#090909;
+}
+
+.close-btn{
+  cursor:pointer;
+}
+
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.card {
+  position: relative;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-btn,
+.card-coming-soon {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #825123;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff9e3;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.card-btn:hover {
+  background: #333;
+}
+
+.card-coming-soon {
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    grid-template-columns: 1fr;
+  }
+}
+.gallary,
+.card-container,
+.container {
+  margin-top: 100px; /* Leaves space below the fixed navbar */
+}
+
+.card-title {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(63, 34, 3, 0.6);
+  color: #fff9e3;
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  pointer-events: none;
+}
