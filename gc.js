@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
       itemImg.classList.add("item-img");
   
       const imgTag = document.createElement("img");
-      imgTag.src = `./goaCarnival/${imageFile}`;
+      imgTag.src = `/goaCarnival/${imageFile}`;
       itemImg.appendChild(imgTag);
   
       const itemName = document.createElement("div");
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   
       item.addEventListener("click", () => {
         const dataImg = itemName.getAttribute("data-img");
-        const clickedItemImgSrc = `./goaCarnival/${dataImg}.jpg`;
+        const clickedItemImgSrc = `/goaCarnival/${dataImg}.jpg`;
         const clickedItemName = itemName.textContent;
   
         imgViewContainer.innerHTML = `<img src="${clickedItemImgSrc}" alt="${clickedItemName}" />`;
