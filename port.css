@@ -378,3 +378,155 @@ h1{
   font-size: 0.9em;
   color: #ccc;
 }
+
+/* Container for the animated cards */
+.card__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  padding: 4rem 1rem;
+  max-width: 1200px;
+  margin: 100px auto 0; /* push below navbar */
+}
+
+/* Each card wrapper */
+.card__article {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card Image */
+.card__img {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  border-radius: 1.5rem;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+
+}
+
+/* Data box shown on hover */
+.card__data {
+  width: 85%;
+  max-width: 280px;
+  background-color: var(--container-color, #fff9e3);
+  padding: 1.5rem 2rem;
+  box-shadow: 0 8px 24px hsla(0, 0%, 0%, 0.15);
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -9rem;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+  opacity: 0;
+  transition: opacity 1s 1s;
+  z-index: 10;
+}
+
+/* Typography inside card */
+.card__description {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 0.75rem;
+}
+
+.card__button {
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #825123;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.card__button:hover {
+  text-decoration: underline;
+}
+
+/* Hover animations */
+.card__article:hover .card__data {
+  animation: show-data 1s forwards;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.card__article:hover {
+  animation: remove-overflow 2s forwards;
+}
+
+.card__article:not(:hover) {
+  animation: show-overflow 2s forwards;
+}
+
+.card__article:not(:hover) .card__data {
+  animation: remove-data 1s forwards;
+}
+
+/* Animations */
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remove-overflow {
+  to {
+    overflow: initial;
+  }
+}
+
+@keyframes remove-data {
+  0% {
+    transform: translateY(-7rem);
+  }
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(0.5rem);
+  }
+}
+
+@keyframes show-overflow {
+  0% {
+    overflow: initial;
+    pointer-events: none;
+  }
+  50% {
+    overflow: hidden;
+  }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .card__container {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+  }
+
+  .card__img {
+    width: 100%;
+  }
+
+  .card__data {
+    width: 90%;
+    padding: 1.25rem 1.5rem;
+  }
+}
