@@ -220,7 +220,7 @@ img {
 .modal-item p {
   position: relative;
   font-size: 14px;
-  color: #fff;
+  color: #000000;
   top: 15px;
 
 }
@@ -243,6 +243,7 @@ img {
 
 .close-btn{
   cursor:pointer;
+  color:#fff9e3;
 }
 
 
