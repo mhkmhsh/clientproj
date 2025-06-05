@@ -64,11 +64,69 @@
   </div>
 
   <div class="p-3"></div>
+  <!--contact form here-->
+  <div class="container">
+    <!-- Left Side - Contact Form -->
+    <div class="contact-form">
+      <form action="https://api.web3forms.com/submit" method="POST" id="form">
+        <!-- Required Web3Forms hidden fields -->
+        <input type="hidden" name="access_key" value="c79ff257-a2a5-4810-9857-8088ff494dd3" />
+        <input type="hidden" name="subject" value="New Submission from Web3Forms" />
+        <input type="checkbox" name="botcheck" style="display:none;" />
 
+        <div class="row">
+          <div class="column">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+          </div>
+          <div class="column">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="column">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="column">
+            <label for="phone">Phone Number</label>
+            <input type="text" id="phone" name="phone" placeholder="+1 (123) 456-7890" required>
+          </div>
+        </div>
+
+        <label for="message">What do you have in mind</label>
+        <textarea id="message" name="message" placeholder="Please enter your message..." required></textarea>
+
+        <button type="submit">Submit</button>
+        <p id="result" class="text-gray-500"></p>
+      </form>
+    </div>
+
+    <hr class="small-screen-break" />
+
+    <!-- Right Side - Contact Info -->
+    <div class="contact-info">
+      <h2>Get In Touch</h2>
+      <p>Reach out through the form for more! </p>
+
+      <div class="contact-methods">
+        <div class="info-item">
+          <i class="fas fa-phone"></i> Instagram: @pal.sutapa
+        </div>
+        <div class="info-item">
+          <i class="fas fa-envelope"></i> Email: palsut@gmail.com
+        </div>
+      </div>
+
+    </div>
+  </div>
   <!-- Elfsight Instagram Feed | Untitled Instagram Feed -->
   <script src="https://static.elfsight.com/platform/platform.js" async></script>
   <div class="elfsight-app-57a50299-6bd6-4191-8bed-8d8ee77cc5b3" data-elfsight-app-lazy></div>
- 
+
+  </section>
   <footer class="footer">
     <div class="footer-links">
       <div class="footer-section">
@@ -91,6 +149,8 @@
           <li><a href="sb.html">Sanganer Bangru</a></li>
         </ul>
       </div>
+
+
 
       <div class="footer-section">
         <h4>Connect</h4>

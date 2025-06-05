@@ -12,16 +12,14 @@ body {
 }
 
 .navbar {
-  position: fixed; /* changed from sticky */
-  top: 0;
-  left: 0;
+  position: relative; /* not fixed anymore */
   width: 100%;
-  background: #1b0c06b6; /* translucent overlay */
+  background: #1b0c06b6;
   backdrop-filter: blur(5px);
-  z-index: 2000; /* ensure it's above carousel & hero */
   color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 
 
 .nav-container {
@@ -179,4 +177,208 @@ body {
 .elfsight-app-57a50299-6bd6-4191-8bed-8d8ee77cc5b3 {
   width: 100%;
   max-width: 1000px;
+}
+
+/* --- Contact Form Layout --- */
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 80%;
+  margin: 50px auto;
+  padding: 20px;
+  gap: 40px;
+  margin-top:0px;
+  background-color: #190e0081;
+  border-radius: 5px 5px 5px 5px;
+}
+
+/* --- Contact Form (Left) --- */
+.contact-form {
+  flex: 1;
+
+}
+
+
+form label {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #fff9e3;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 20px;
+  background-color: transparent;
+ color: #fff9e3;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+form textarea {
+  resize: vertical;
+  height: 120px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+}
+
+
+button[type="submit"] {
+  position: relative;
+  background-color: #825123;
+  color: #fff9e3;
+  padding: 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.5s ease; /* Slightly slower transition */
+  width: 100%;
+  overflow: hidden;
+}
+
+button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  pointer-events: none; /* ensures it doesn’t block clicks */
+}
+
+button[type="submit"]:hover {
+  background-color: #190e00; /* change background on hover */
+}
+
+button[type="submit"]:hover::before {
+  animation: shine 1.8s ease forwards; /* slower animation, doubled duration */
+}
+
+@keyframes shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}
+
+form input:focus,
+form textarea:focus {
+  outline: none; /* remove default focus outline */
+  border-color: #190e00; /* yellow border */
+  box-shadow: 0 0 10px 3px rgba(70, 39, 0, 0.7); /* yellow glow */
+  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+}
+
+form input,
+form textarea {
+  transition: box-shadow 0.6s ease, border-color 0.6s ease;
+}
+
+
+
+/* Result Text */
+#result {
+  font-size: 14px;
+  margin-top: 10px;
+  color: #fff9e3;
+}
+
+/* --- Contact Info (Right) --- */
+.contact-info {
+  flex: 1;
+  padding-left: 40px;
+  border-left: 1px solid #ddd;
+   color: #fff9e3;
+   font-family: "Roboto Condensed", sans-serif;
+  
+}
+
+.contact-info p,
+.contact-methods .info-item {
+  font-family: "Roboto Condensed", sans-serif;
+font-weight: normal !important;
+ color: #fff9e3;
+}
+
+.contact-info h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #fff9e3;
+  
+}
+
+.contact-info p {
+  font-size: 20px;
+  color: white;
+  margin-bottom: 20px;
+  line-height: 1.6;
+  font-weight: normal !important;
+   color: #fff9e3;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: white;
+}
+
+.info-item i {
+  margin-right: 12px;
+  font-size: 24px;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.info-item i:hover {
+  transform: scale(1.2);
+}
+.small-screen-break {
+  display: none;
+  border: none;
+  border-top: 1px solid #fff9e3;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .contact-info {
+    padding-left: 0;
+    border-left: none;
+    margin-top: 2rem;
+  }
+
+  .small-screen-break {
+    display: block;
+  }
 }
